@@ -18,7 +18,9 @@ const TYPE = "movie";
 // Altere para a path do output
 const RESULT_NAME = "video.mp4";
 
-fs.unlinkSync(RESULT_NAME);
+if (fs.existsSync(RESULT_NAME)) {
+  fs.unlinkSync(RESULT_NAME);
+}
 
 const appleTvPageUrl = `https://tv.apple.com/br/${TYPE}/${APPLE_TV_ID}`;
 
