@@ -1,7 +1,7 @@
 {
   "name": "download-apple-tv-trailer",
   "version": "1.0.0",
-  "description": "",
+  "description": "Este script js é capaz de baixar trailers em alta resolução de um filme ou série na Apple tv",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
