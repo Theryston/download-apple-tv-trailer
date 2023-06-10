@@ -1,6 +1,6 @@
 # Download Apple Tv Trailer
 
-Este script js é capaz de baixar trailers em alta resolução de um filme ou série da apple tv
+Este script js é capaz de baixar trailers em alta resolução de um filme ou série na Apple tv
 
 ## Instalação
 
