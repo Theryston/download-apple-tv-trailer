@@ -49,12 +49,21 @@ parser.end();
 
 const playlistJson = parser.manifest.playlists;
 
-const videoPlaylistM3u8 = playlistJson.reduce((acc, playlist) => {
-  if (playlist.attributes.RESOLUTION.width > acc.attributes.RESOLUTION.width) {
-    return playlist;
-  }
-  return acc;
+let videoPlaylistM3u8 = playlistJson.find((playlist) => {
+  return playlist.attributes.RESOLUTION.width >= 1900;
 });
+
+if (!videoPlaylistM3u8) {
+  videoPlaylistM3u8 = playlistJson.reduce((acc, playlist) => {
+    if (
+      playlist.attributes.RESOLUTION.width > acc.attributes.RESOLUTION.width
+    ) {
+      return playlist;
+    }
+    return acc;
+  });
+}
+
 const audioPlaylistM3u8Language =
   parser.manifest.mediaGroups.AUDIO[videoPlaylistM3u8.attributes.AUDIO];
 
