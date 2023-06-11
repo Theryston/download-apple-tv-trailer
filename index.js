@@ -15,14 +15,20 @@ const APPLE_TV_ID = "umc.cmc.4cqrxmz9zixmwp0zvnp0jk75b";
 // Deve ser "movie" para filmes e "show" para séries
 const TYPE = "movie";
 
-// Altere para a path do output
+// Altere para a path de onde o vídeo final deve ser salvo
 const RESULT_NAME = "video.mp4";
+
+// O código do pais de onde deve ser pego o trailer
+// Na maioria das vezes não é preciso alterar.
+// Mas caso não ache o trailer em um pais você pode ir tentando em outros
+// Esse código deve ser por exemplo: "br", "us"
+const COUNTRY = "br";
 
 if (fs.existsSync(RESULT_NAME)) {
   fs.unlinkSync(RESULT_NAME);
 }
 
-const appleTvPageUrl = `https://tv.apple.com/br/${TYPE}/${APPLE_TV_ID}`;
+const appleTvPageUrl = `https://tv.apple.com/${COUNTRY}/${TYPE}/${APPLE_TV_ID}`;
 
 const appleTvPageResponse = await fetch(appleTvPageUrl);
 const appleTvHtml = await appleTvPageResponse.text();
