@@ -6,5 +6,5 @@ Este script js é capaz de baixar trailers em alta resolução de um filme ou s�
 
 - Clone o repositório
 - Instale as dependências com o comando `pnpm install`
-- Altere as variáveis `APPLE_TV_ID`, `TYPE` e `RESULT_NAME` com forme for preciso no arquivo `./index.js`
+- Altere as variáveis `APPLE_TV_ID`, `TYPE`, `RESULT_NAME` e `COUNTRY` com forme for preciso no arquivo `./index.js`
 - Execute o script com `pnpm start`
